@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draft Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">FRONTEND EXPERIMENT</p>
+      <h1>Draft Management System</h1>
+      <p class="subtitle">Write, save, edit, and manage post drafts in one place.</p>
+    </div>
+    <span class="badge">Local storage enabled</span>
+  </header>
+
+  <main class="layout">
+    <section class="panel editor">
+      <div class="section-heading">
+        <div>
+          <h2 id="formTitle">Create a draft</h2>
+          <p>Drafts are saved in this browser.</p>
+        </div>
+      </div>
+      <form id="draftForm">
+        <input type="hidden" id="draftId">
+        <label for="postTitle">Post title</label>
+        <input id="postTitle" type="text" maxlength="100" placeholder="Enter a title..." required>
+
+        <label for="postContent">Post content</label>
+        <textarea id="postContent" rows="9" maxlength="5000" placeholder="Write your post here..." required></textarea>
+        <div class="field-meta"><span id="charCount">0 / 5000 characters</span><span>Autosave is not enabled</span></div>
+
+        <label for="postCategory">Category</label>
+        <select id="postCategory">
+          <option value="General">General</option>
+          <option value="Education">Education</option>
+          <option value="Technology">Technology</option>
+          <option value="Personal">Personal</option>
+          <option value="Announcement">Announcement</option>
+        </select>
+
+        <div class="actions">
+          <button class="primary" type="submit" id="saveButton">Save draft</button>
+          <button class="secondary" type="button" id="clearButton">Clear form</button>
+        </div>
+        <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel draft-panel">
+      <div class="list-header">
+        <div>
+          <h2>Your drafts</h2>
+          <p><span id="draftCount">0</span> saved draft(s)</p>
+        </div>
+        <input id="searchInput" class="search" type="search" placeholder="Search drafts..." aria-label="Search drafts">
+      </div>
+      <div id="draftList" class="draft-list"></div>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">✎</div>
+        <h3>No drafts yet</h3>
+        <p>Create your first draft using the form.</p>
+      </div>
+    </section>
+  </main>
+  <footer>Draft Management System · HTML, CSS and JavaScript · Demo project</footer>
+  <script src="script.js"></script>
+</body>
+</html>

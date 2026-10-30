@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post Composer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Post Composer</h1>
+    <p class="sub">Write once, publish to many platforms. Each platform's rules are checked live.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="h-platforms">
+      <h2 id="h-platforms">1. Choose platforms</h2>
+      <div id="platform-toggles" class="chips" role="group" aria-label="Platforms"></div>
+
+      <h2>2. Compose</h2>
+      <div id="tabs" class="tabs" role="tablist" aria-label="Editing target"></div>
+      <textarea id="editor" rows="9" placeholder="What do you want to share? Use #hashtags and links."
+        aria-label="Post text"></textarea>
+      <p id="override-note" class="hint"></p>
+      <div class="row">
+        <label class="btn secondary file-btn">
+          Attach media
+          <input id="file" type="file" accept="image/*,video/*" multiple hidden>
+        </label>
+        <button id="reset-override" class="btn ghost" type="button" hidden>Reset to shared text</button>
+      </div>
+      <ul id="media-list" class="media-list" aria-label="Attached media"></ul>
+
+      <div class="row end">
+        <button id="publish" class="btn primary" type="button" disabled>Publish</button>
+      </div>
+      <p id="publish-status" class="hint" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="h-preview">
+      <h2 id="h-preview">3. Validation &amp; preview</h2>
+      <div id="cards" class="cards"></div>
+      <p id="empty-state" class="hint">Select at least one platform to see its constraints.</p>
+    </section>
+  </main>
+
+  <script src="js/platforms.js"></script>
+  <script src="js/validator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

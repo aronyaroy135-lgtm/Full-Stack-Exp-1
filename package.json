@@ -1,0 +1,10 @@
+{
+  "name": "post-composer",
+  "version": "1.0.0",
+  "description": "Dynamic multi-platform post composer with constraint validation",
+  "scripts": {
+    "test": "node tests/validator.test.js",
+    "start": "python3 -m http.server 8000"
+  },
+  "license": "MIT"
+}
